@@ -7,7 +7,7 @@
   </div>
   <div class="field">
     <%= f.label :post_category_id, "カテゴリー"  %><br />
-    <%# <%= f.colection_serect %> 
+    <%= f.collection_select(:post_category_id, PostCategory.all,:id, :name, {}, {class:"select-box", id:"post-category"}) %>
   </div>
 
   <div class="field">
