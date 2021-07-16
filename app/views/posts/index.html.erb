@@ -1,1 +1,9 @@
-aaaaa
+<%= render "shared/header" %>
+
+<div class="post-top">
+  <h2>NEWS</h2>
+</div>
+
+<%= render partial:"post", collection: @posts %>
+
+<%= render "shared/footer" %>
