@@ -1,0 +1,23 @@
+.post-top{
+margin-bottom: 100px;
+}
+
+.post-top-title{
+  text-align: center;
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.post-main-contents{
+  width: 70%;
+  margin: 0 auto ;
+}
+
+.post-main{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
