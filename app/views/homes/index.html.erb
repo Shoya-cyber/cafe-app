@@ -4,13 +4,16 @@
   <div class="home-pic-space">
     <%= image_tag "home-pic.png", class:"home-pic" %>
   </div>
-  <div>NEWS
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
+  
+  <div class="news-contents">
+    <h2 class="news-title">NEWS</h2>
+    
+    <div class="news-lists">
+      <%= render partial: 'posts/post', collection:@posts %>
+    </div>
+    
   </div>
+
   <div>link
     <ul>
       <li>a</li>
