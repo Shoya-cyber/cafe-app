@@ -38,4 +38,9 @@ header {
   font-size: 18px;
   margin-left: 40px;
 }
+
+.navi-news-link{
+  text-decoration: none;
+  color: white;
+}
 /* ここまでheader */

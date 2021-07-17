@@ -6,8 +6,9 @@
   </div>
   
   <div class="news-contents">
-    <h2 class="news-title">NEWS</h2>
-    
+    <div class="news-title">
+      <%= link_to "NEWS", posts_path, class: "news-title-link" %>
+    </div>
     <div class="news-lists">
       <%= render partial: 'posts/post', collection:@posts %>
     </div>
