@@ -1,0 +1,41 @@
+header {
+  width: 100vw;
+  height: 120px;
+}
+
+.app-title {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+
+}
+.title {
+  font-size: 30px;
+  color: cornflowerblue;
+  
+}
+
+.navi-bar {
+  height: 50%;
+  background-color: cornflowerblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navi-button-left {
+  display: flex;
+  width: 500px;
+}
+
+.navi-button-right {
+  width: 300px;
+  display: flex;
+}
+
+.navi-list {
+  color: white;
+  font-size: 18px;
+  margin-left: 40px;
+}
+/* ここまでheader */
