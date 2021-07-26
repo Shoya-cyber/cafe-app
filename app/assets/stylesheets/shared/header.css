@@ -51,4 +51,11 @@ header {
   text-decoration: none;
   color: white;
 }
+
+.navi-right-btn{
+  text-decoration: none;
+  color: white;
+  margin-left: 40px;
+}
+
 /* ここまでheader */
