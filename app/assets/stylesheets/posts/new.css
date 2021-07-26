@@ -1,0 +1,73 @@
+.post-form {
+  background-color: blueviolt;
+  width: 70vw;
+  margin: 120px auto 0;
+  font-weight: 800;
+  ;
+}
+
+.post-header{
+  margin-top: 30px;
+}
+
+.post-title{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid black;
+}
+
+.field{
+  margin: 30px 0px;
+}
+
+.title-form{
+  width: 70%;
+  margin-top: 5px;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 5px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.text-form{
+  width: 100%;
+  margin-top: 5px;
+  height: 500px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 5px solid #ccc;
+  background: #fff;
+  font-size: 15px;
+}
+
+.post-submit{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.post-submit-btn{
+  background-color: dodgerblue;
+  color: white;
+  width: 150px;
+  height: 70px;
+  border-radius: 100%;
+  border: none;
+  margin:  50px 50px ;
+}
+
+.back-btn{
+  margin-left: 40px;
+}
+
+.select-box{
+  width: 150px;
+  height: 50px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 5px solid #ccc;
+  background: #fff;
+}

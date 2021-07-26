@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+<%= form_with  model: @post, local: true do |f|  %>
+
+  <div class="post-form">
+    <div class="post-header">
+      <h1 class="post-title">記事投稿</h1>
+    </div>
+    <div class="field">
+      <%= f.label :post_category_id, "カテゴリー"  %><br />
+      <%= f.collection_select(:post_category_id, PostCategory.all,:id, :name, {}, {class:"select-box", id:"post-category"}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image, "写真"  %><br />
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :title, "タイトル"  %><br />
+      <%= f.text_area :title, class:"title-form", placeholder:"タイトル （50字以内）", maxlength:"50" %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :text, "記事"  %><br />
+      <%= f.text_area :text, class:"text-form", placeholder:"記事" %>
+    </div>
+
+    <div class="post-submit">
+      <%= f.submit "投稿する" ,class: "post-submit-btn" %>
+      <%= link_to "トップページへ戻る", root_path, class:"back-btn"%>
+    </div>
+  </div>
+
+<% end %>
+
+<%= render "shared/footer" %>

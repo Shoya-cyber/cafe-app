@@ -1,0 +1,17 @@
+.card{
+  width: 30%;
+  margin-bottom: 100px;
+}
+
+.post-image{
+  width: 100%;
+  height: 25vh;
+}
+
+.card-body{
+  padding-top: 10px;
+}
+
+.card-list{
+  padding-bottom: 20px;
+}

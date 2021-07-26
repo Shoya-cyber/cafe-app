@@ -1,56 +1,29 @@
-<header> 
-  <div class="app-title">
-    <h2 class="title"><i><b>Cafe-app</b></i></h2>
-  </div>
-
-  <div class="navi-bar">
-    <ul class="navi-button-left">
-      <li class="navi-list">online store</li>
-      <li class="navi-list">cafe</li>
-      <li class="navi-list">news</li>
-      <li class="navi-list">about</li>
-    </ul>
-    <ul class="navi-button-right">
-      <li class="navi-list">会員登録</li>
-      <li class="navi-list">ログイン</li>
-    </ul>
-  </div>
-</header>
+<%= render "shared/header" %>
 
 <main>
   <div class="home-pic-space">
     <%= image_tag "home-pic.png", class:"home-pic" %>
   </div>
-  <div>NEWS
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
+  
+  <div class="news-contents">
+    <div class="news-title">
+      <%= link_to "NEWS", posts_path, class: "news-title-link" %>
+    </div>
+    <div class="news-lists">
+      <%= render partial: 'posts/post', collection:@posts %>
+    </div>
+    
   </div>
+
   <div>link
     <ul>
       <li>a</li>
       <li>b</li>
       <li>c</li>
     </ul>
-    
+
   </div>
   
 </main>
 
-<footer>
-  <div class="footer-content">
-    <h2 class="footer-information">Information</h2>
-    <ul>
-      <li class="footer-lists">ご利用ガイド</li>
-      <li class="footer-lists">お問い合わせ</li>
-      <li class="footer-lists">会社概要</li>
-      <li class="footer-lists">プライバシーポシシー</li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <h3 class="footer-home-link">Cafe-app</h3>
-    <p>©︎cafe-app</p>
-  </div>
-</footer>
+<%= render "shared/footer" %>

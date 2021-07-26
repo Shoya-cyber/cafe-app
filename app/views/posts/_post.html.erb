@@ -1,0 +1,12 @@
+<div class="card">
+  <%# <%= link_to post_path(post.id) do %> 
+    <%= image_tag post.image, class: "post-image" %>
+    <div class="card-body">
+      <ul class="card-body-lists">
+        <li class="card-list">#<%= post.post_category.name %></li>
+        <li class="card-list"><b><%= post.title%></b></li>
+        <li class="card-list"><%= post.updated_at %></li>
+      </ul>
+    </div>
+  <%# <% end %> 
+</div>
