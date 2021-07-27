@@ -1,11 +1,9 @@
 class PostsController < ApplicationController
-
-
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order('created_at DESC')
   end
 
-  def new 
+  def new
     @post = Post.new
   end
 
@@ -23,10 +21,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:post_category_id, :title, :text, :image)
   end
-
-
-    
-
-
-
 end

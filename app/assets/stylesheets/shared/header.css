@@ -25,6 +25,7 @@ header {
 
 .navi-bar {
   height: 50%;
+  width: 100%;
   background-color: cornflowerblue;
   display: flex;
   align-items: center;
@@ -37,13 +38,14 @@ header {
 }
 
 .navi-button-right {
-  width: 300px;
+  
   display: flex;
+  
 }
 
 .navi-list {
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 40px;
 }
 
@@ -51,4 +53,20 @@ header {
   text-decoration: none;
   color: white;
 }
+
+.navi-right-btn{
+  text-decoration: none;
+  color: white;
+  margin-right: 50px;
+}
+
+.welcome{
+  margin-right: 40px;
+}
+
+.welcome-name{
+  color: white;
+}
+
+
 /* ここまでheader */
