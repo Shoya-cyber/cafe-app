@@ -1,0 +1,11 @@
+.error-alert{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.error-message{
+  color: red;
+  font-size: 25px;
+  list-style: circle;
+}
