@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :name_reading, format: { with: /\A[ァ-ヶー－]+\z/, message: 'is invalid. Input full-width characters.'}
+    validates :name_reading, format: { with: /\A[ァ-ヶー－[　]]+\z/, message: 'is invalid. Input full-width characters.'}
     validates :email, uniqueness: true
     validates :password
     validates :phone_number, length: { maximum: 11 }
