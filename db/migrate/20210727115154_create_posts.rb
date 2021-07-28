@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :post_category_id, null: false
       t.string  :title,            null: false
       t.text    :text,             null: false
-      # t.references  :user,         foreign_key:true
+      t.references  :user,         foreign_key: true
       t.timestamps
     end
   end

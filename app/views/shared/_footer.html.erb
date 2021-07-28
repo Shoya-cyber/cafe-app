@@ -1,12 +1,23 @@
 <footer>
-  <div class="footer-content">
-    <h2 class="footer-information">Information</h2>
-    <ul>
-      <li class="footer-lists">ご利用ガイド</li>
-      <li class="footer-lists">お問い合わせ</li>
-      <li class="footer-lists">会社概要</li>
-      <li class="footer-lists">プライバシーポシシー</li>
-    </ul>
+  <div class="footer-contents">
+    <div class="footer-info-wrap">
+      <h2 class="footer-category">Information</h2>
+      <ul>
+        <li class="footer-lists">ご利用ガイド</li>
+        <li class="footer-lists">お問い合わせ</li>
+        <li class="footer-lists">会社概要</li>
+        <li class="footer-lists">プライバシーポリシー</li>
+      </ul>
+    </div>
+    <% if current_user.try(:admin?) %>
+    <div class="footer-admin-wrap">
+      <h2 class="footer-category">管理者メニュー</h2>
+      <ul>
+        <li class="footer-lists"><%= link_to "管理者ページ", rails_admin_path, class: "admin-list" %></li>
+        <li class="footer-lists"><%= link_to "記事新規投稿", new_post_path, class: "admin-list" %></li>
+      </ul>
+    </div>
+    <% end %>
   </div>
   <div class="footer-bottom">
     <h3 class="footer-home-link">Cafe-app</h3>

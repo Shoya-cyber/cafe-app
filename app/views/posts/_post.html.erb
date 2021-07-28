@@ -1,11 +1,11 @@
-<div class="card">
+<div class="article">
   <%# <%= link_to post_path(post.id) do %> 
-    <%= image_tag post.image, class: "post-image" %>
-    <div class="card-body">
-      <ul class="card-body-lists">
-        <li class="card-list">#<%= post.post_category.name %></li>
-        <li class="card-list"><b><%= post.title%></b></li>
-        <li class="card-list"><%= post.updated_at %></li>
+    <%= image_tag post.image, class: "article-image" %>
+    <div class="article-body">
+      <ul class="article-body-lists">
+        <li class="article-list">#<%= post.post_category.name %></li>
+        <li class="article-list"><b><%= post.title%></b></li>
+        <li class="article-list"><%= post.updated_at.to_s(:datetime_jp) %></li>
       </ul>
     </div>
   <%# <% end %> 

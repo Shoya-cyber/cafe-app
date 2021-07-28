@@ -1,7 +1,7 @@
 .post-form {
   background-color: blueviolt;
-  width: 70vw;
-  margin: 120px auto 0;
+  width: 70%;
+  margin: 150px auto 0;
   font-weight: 800;
   ;
 }
@@ -45,8 +45,10 @@
 }
 
 .post-submit{
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .post-submit-btn{
@@ -56,7 +58,7 @@
   height: 70px;
   border-radius: 100%;
   border: none;
-  margin:  50px 50px ;
+  margin:  50px auto ;
 }
 
 .back-btn{
