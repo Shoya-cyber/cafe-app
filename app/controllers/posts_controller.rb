@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-
+  before_action :move_to_root, only: [:new]
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -23,5 +23,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:post_category_id, :title, :text, :image).merge(user_id: current_user.id)
+  end
+
+  def move_to_root
+    unless user_signed_in? && current_user.admin == true
+      redirect_to root_path
+    end
   end
 end
