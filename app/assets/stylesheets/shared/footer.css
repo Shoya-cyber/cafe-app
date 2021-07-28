@@ -2,12 +2,14 @@ footer {
   height: 300px;
 }
 
-.footer-content {
-  border-top: solid 1px black;
-  padding-left: 70px;
+.footer-contents{
+  border-top: solid 1px silver;
+  display: flex;
+  justify-content: space-around;
 }
 
-.footer-information {
+
+.footer-category {
   font-size: 18px;
   font-weight: bold;
   margin: 30px 0;
@@ -15,6 +17,7 @@ footer {
 
 .footer-lists {
   margin-top: 20px;
+  font-size: 13px;
 }
 
 .footer-bottom {
@@ -25,4 +28,9 @@ footer {
 .footer-home-link {
   color: cornflowerblue;
   font-size: 20px;
+}
+
+.admin-list{
+  color: black;
+  text-decoration: none;
 }
