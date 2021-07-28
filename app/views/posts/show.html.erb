@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div class="post-show">
+  <div class="show-title">
+    <%= @post.title %>
+  </div>
+  <div class="show-date">
+   <%= @post.updated_at.to_s(:datetime_jp) %>
+  </div>
+  <div class="show-image">
+    <%= image_tag @post.image, class: "show-post-image" %>
+  </div>
+  <div class="show-text">
+    <%= @post.text %>
+  </div>
+  <div class="show-admin-btn">
+    <%= link_to "編集", "#", class: "show-btn" %>
+    <%= link_to "削除", "#", class: "show-btn" %>
+  </div>
+</div>
+<%= render "shared/footer" %>
