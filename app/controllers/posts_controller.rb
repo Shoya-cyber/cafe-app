@@ -26,8 +26,6 @@ class PostsController < ApplicationController
   end
 
   def move_to_root
-    unless user_signed_in? && current_user.admin == true
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && current_user.admin == true
   end
 end
