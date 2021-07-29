@@ -68,5 +68,12 @@ header {
   color: white;
 }
 
+.navi-left-btn{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 40px;
+}
+
 
 /* ここまでheader */
