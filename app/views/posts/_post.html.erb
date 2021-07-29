@@ -1,12 +1,16 @@
 <div class="article">
-  <%# <%= link_to post_path(post.id) do %> 
-    <%= image_tag post.image, class: "article-image" %>
+    <%= link_to image_tag(post.image, class: "article-image"), post_path(post.id) %>
     <div class="article-body">
       <ul class="article-body-lists">
         <li class="article-list">#<%= post.post_category.name %></li>
-        <li class="article-list"><b><%= post.title%></b></li>
+        <li class="article-list"><b><%= link_to post.title, post_path(post.id), class: "post-title-link" %></b></li>
         <li class="article-list"><%= post.updated_at.to_s(:datetime_jp) %></li>
       </ul>
     </div>
-  <%# <% end %> 
+    <% if current_user.try(:admin?) %>
+    <div class="article-admin-btn-wrap">
+      <%= link_to "編集", "#", class: "article-admin-btn" %>
+      <%= link_to "削除", "#", class: "article-admin-btn" %>
+    </div>
+    <% end %>
 </div>
