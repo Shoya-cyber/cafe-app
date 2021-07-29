@@ -10,7 +10,7 @@
     <% if current_user.try(:admin?) %>
     <div class="article-admin-btn-wrap">
       <%= link_to "編集", edit_post_path(post.id), class: "article-admin-btn" %>
-      <%= link_to "削除", post_path(post.id), method: :delete, class: "article-admin-btn" %>
+      <%= link_to "削除", post_path(post.id), method: :delete, class: "article-admin-btn" , data: {confirm: "削除しますか？"} %>
     </div>
     <% end %>
 </div>
