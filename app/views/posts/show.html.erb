@@ -13,9 +13,11 @@
   <div class="show-text">
     <%= @post.text %>
   </div>
-  <div class="show-admin-btn">
-    <%= link_to "編集", "#", class: "show-btn" %>
-    <%= link_to "削除", "#", class: "show-btn" %>
-  </div>
+  <% if current_user.try(:admin?) %>
+    <div class="show-admin-btn">
+      <%= link_to "編集", "#", class: "show-btn" %>
+      <%= link_to "削除", "#", class: "show-btn" %>
+    </div>
+  <% end %>
 </div>
 <%= render "shared/footer" %>
