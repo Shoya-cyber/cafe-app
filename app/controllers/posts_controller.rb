@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :move_to_root, only: [:new]
+  before_action :move_to_root, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @posts = Post.all.order('created_at DESC')
