@@ -1,0 +1,15 @@
+.products-main-page{
+  padding-top: 150px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.products-main-title-wrap{
+  text-align: center;
+  color: gray;
+  margin: 30px 0 100px;
+}
+
+.products-main-title{
+  font-size: 25px;
+}

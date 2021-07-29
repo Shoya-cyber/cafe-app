@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+<div class="products-main-page">
+  
+  <div class="products-main-title-wrap">
+    <h2 class="products-main-title">
+      Online Store
+    </h2>
+    <% unless user_signed_in? %>
+      <p>会員登録／ログインしていただくとご購入いただけます</p>
+    <% end %>
+  </div>
+
+  <div class="product-box">
+  </div>
+</div>
+<%= render "shared/footer" %>
