@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :move_to_root, only: [:new, :create]
+  before_action :move_to_root, only: [:new, :create, :edit, :update]
 
   def index
     @products = Product.all.order('created_at DESC')
