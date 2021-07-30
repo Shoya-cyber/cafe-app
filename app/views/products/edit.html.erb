@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class="products-new-page">
+  <div class="products-new-title-wrap">
+    <h2 class="products-new-title">
+      商品編集
+    </h2>
+  </div>
+  <div class="products-new-form">
+    <%= form_with model: @product, url: product_path(@product.id), local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+      <div class="field">
+        <%= f.label :image, "商品写真"  %><br />
+        <%= f.file_field :image %>
+      </div>
+      <div class="field">
+        <%= f.label :product_name, "商品名" %><br />
+        <%= f.text_field :product_name, class: "product-name-form" %>
+      </div>
+      <div class="field">
+        <%= f.label :price, "価格"  %><br />
+        <%= f.text_field :price , class: "price-form", placeholder:"半角数字" %>
+      </div>
+      <div class="field">
+        <%= f.label :info, "商品説明"  %><br />
+        <%= f.text_area :info , class: "info-form", placeholder: "（50字以内）", maxlength:"50" %>
+      </div>
+      <div class="product-submit">
+        <%= f.submit "変更する" ,class: "product-submit-btn" %>
+        <%= link_to "商品一覧へ戻る", products_path, class:"products-back-btn"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>
