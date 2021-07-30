@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_root, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.all.order('created_at DESC')
@@ -19,11 +20,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to products_path
     else
@@ -32,7 +31,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_path
   end
@@ -45,6 +43,10 @@ class ProductsController < ApplicationController
 
   def move_to_root
     redirect_to root_path unless user_signed_in? && current_user.admin == true
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end
