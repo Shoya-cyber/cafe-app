@@ -1,6 +1,6 @@
 .products-main-page{
   padding-top: 150px;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -12,4 +12,9 @@
 
 .products-main-title{
   font-size: 25px;
+}
+.product-box{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
