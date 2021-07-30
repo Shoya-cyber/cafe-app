@@ -1,0 +1,55 @@
+.products-new-page{
+  padding-top: 150px;
+  width: 50%;
+  margin: 0 auto;
+}
+.products-new-title-wrap{
+  text-align: center;
+  color: gray;
+  margin: 30px 0 100px;
+}
+.products-new-title{
+  font-size: 25px;
+}
+
+.product-name-form, .price-form {
+  width: 70%;
+  margin-top: 5px;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.info-form{
+  width: 100%;
+  height: 70px;
+  margin-top: 5px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+
+.product-submit{
+  width: 70%;
+  margin: 100px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product-submit-btn{
+  background-color: dodgerblue;
+  color: white;
+  width: 150px;
+  height: 70px;
+  border-radius: 100%;
+  border: none;
+}

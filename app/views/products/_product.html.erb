@@ -1,0 +1,17 @@
+<div class="product-wrap">
+  <div class="product-image-box">
+    <%= image_tag product.image, class: "product-image"%>
+  </div>
+  <div class="product-info-box">
+    <ul>
+    <li><%= product.product_name %></li>
+    <li>¥  <%= product.price %>  (税込)</li>
+    <li><%= product.info %></li>
+    </ul>
+  </div>
+  <% if user_signed_in? %>
+    <div class="product-buy-btn">
+      <p>カートへ入れる    １</p>
+    </div>
+  <% end %>
+</div>
