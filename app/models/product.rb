@@ -7,4 +7,5 @@ class Product < ApplicationRecord
     validates :price, format: { with: /\A[0-9]+\z/, massage: 'is invalid. Input half-width characters.' }
     validates :image
   end
+  validates :price, numericality: { only_integer: true, other_than: 0, massage: 'is invalid. Input half-width characters.' }
 end
