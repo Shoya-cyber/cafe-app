@@ -14,4 +14,10 @@
       <p>カートへ入れる    １</p>
     </div>
   <% end %>
+  <% if current_user.try(:admin?) %>
+    <div class="product-admin-btn-wrap">
+      <%= link_to "編集", edit_product_path(product.id), class: "product-admin-btn" %>
+      <%= link_to "削除", "#", method: :delete, class: "product-admin-btn" , data: {confirm: "削除しますか？"} %>
+    </div>
+  <%end%>
 </div>
