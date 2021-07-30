@@ -52,4 +52,10 @@
   height: 70px;
   border-radius: 100%;
   border: none;
+  
+}
+
+.products-back-btn{
+  text-decoration: none;
+  color: black;
 }
