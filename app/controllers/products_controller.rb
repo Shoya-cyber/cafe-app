@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :move_to_root, only: [:new, :create]
+
   def index
     @products = Product.all
   end
@@ -21,4 +23,9 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:product_name, :info, :price, :image)
   end
+
+  def move_to_root
+    redirect_to root_path unless user_signed_in? && current_user.admin == true
+  end
+
 end
