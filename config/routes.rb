@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
 
+  post 'carts/add_cart', to: 'carts#add_cart'
 end
