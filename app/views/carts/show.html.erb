@@ -8,10 +8,12 @@
 
 
   <tbody>
+    <% @sum = 0 %>
     <% @cart.each.with_index(1) do |cart, i| %>
     <tr class="text-center">
       <th class="align-middle">
-      </tr>
+        <%= i %>
+      </th>
       <td class="align-middle">
         <%= cart[:name] %>
       </td>
@@ -32,6 +34,7 @@
         <%= f.submit "更新", class: "btn btn-primary" %>
       </td>
       <% end %>
+      <% @sum += cart[:sub_total] %>
 
       <%#商品削除%>
       <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
@@ -48,7 +51,7 @@
         合計
       </td>
       <td class="border-bottom-0 align-right">
-        <%= @cart_total_price %>円
+        <%= @sum %> 円
       </td>
     </tr>
   </tbody>

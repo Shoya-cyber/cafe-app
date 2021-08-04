@@ -11,9 +11,9 @@
   </div>
   <% if user_signed_in? %>
     <div class="product-buy-btn">
-      <%= form_with url: carts_add_cart_path, method: :post, local: true do |f|%>
+      <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
         <%= f.number_field :quantity, min: 1, class: "pur-number" %>
-        <%= hidden_field_tag :product_id, product.id%>
+        <%= hidden_field_tag :product_id, product.id %>
         <%= f.submit "カートへ", class: "in-cart-btn" %>
       <% end %>
     </div>
