@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'carts/show', to: 'carts#show', as: 'carts/show'
   post 'carts/add_cart', to: 'carts#add_cart'
+  patch 'carts/change_quantity', to: 'carts#change_quantity', as: 'change_item_quantity'
+  delete 'carts/destroy_carts_item', to: 'carts#destroy_carts_item', as: 'destroy_carts_item'
 end
