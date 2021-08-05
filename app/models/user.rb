@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_one :card, dependent: :destroy
 
   with_options presence: true do
     validates :name
