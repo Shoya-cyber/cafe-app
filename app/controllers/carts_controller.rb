@@ -9,6 +9,7 @@ class CartsController < ApplicationController
       next unless product
 
       @cart.push({ product_id: product.id,
+                   image: product.image,
                    name: product.product_name,
                    price: product.price,
                    quantity: cart["quantity"].to_i,
@@ -38,7 +39,7 @@ class CartsController < ApplicationController
     session[:cart][array_index[0]]["quantity"] = params["quantity"]
     redirect_to carts_show_path
   end
-
+  
   def destroy_carts_item
     array_index = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params["product_id"] }
     session[:cart].delete_at(array_index[0])

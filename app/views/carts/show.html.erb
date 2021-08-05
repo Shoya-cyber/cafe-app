@@ -2,59 +2,70 @@
 
 <div class="cart-show-page">
 
+  <h2 class="cart-show-title">
+    Cart
+  </h2>
+
   <% if @cart.blank? %>
-    <h1 class="text-center">カートに商品がありません</h1>
+    <div class="cart-blank-page">
+      <h1 class="cart-blank-text">カートに商品がありません</h1>
+      <%= link_to "商品一覧へ", products_path, class: "cart-blank-back" %>
+    </div>
+
+
   <% else %>
 
+    <table class="table01">
 
-  <tbody>
-    <% @sum = 0 %>
-    <% @cart.each.with_index(1) do |cart, i| %>
-    <tr class="text-center">
-      <th class="align-middle">
-        <%= i %>
-      </th>
-      <td class="align-middle">
-        <%= cart[:name] %>
-      </td>
-      <td class="align-middle">
-        <%= cart[:price] %>円
-      </td>
+      <tr>
+        <th colspan="3">商品</th>
+        <th>数量</th>
+        <th>小計</th>
+      </tr>
 
-      <%#数量変更%>
-      <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>
-      <td class="align-middle">
-        <%= f.number_field :quantity, value: cart[:quantity], min: 1, class: "btn btn-outline-dark" %>個
-      </td>
-      <td class="align-middle">
-        <%= cart[:sub_total] %>円
-      </td>
-      <td>
-        <%= hidden_field_tag :product_id, cart[:priduct_id] %>
-        <%= f.submit "更新", class: "btn btn-primary" %>
-      </td>
+      <% @sum = 0 %>
+      <% @cart.each.with_index(1) do |cart, i| %>
+      <tr class="cart-product-info">
+        <td class="align-middle">
+          <%= i %>
+        </td>
+        <td class="cart-show-image">
+          <%= image_tag cart[:image], size: '170x120' %>
+        </td>
+        <td class="cart-show-name">
+          <%= cart[:name] %><br>
+          <%= cart[:price] %>円
+        </td>
+
+        <%#数量変更%>
+        <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>
+          <td class="align-middle">
+            <%= f.number_field :quantity, value: cart[:quantity], min: 1, class: "cart-show-quantity" %>個
+          </td>
+          <td class="align-middle">
+            <%= cart[:sub_total] %>円
+          </td>
+          <td>
+            <%= hidden_field_tag :product_id, cart[:product_id] %>
+            <%= f.submit "更新", class: "cart-show-left-btn" %>
+          </td>
+        <% end %>
+        <% @sum += cart[:sub_total] %>
+
+        <%#商品削除%>
+        <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
+          <td class="border-0 align-middle">
+            <%= hidden_field_tag :product_id, cart[:product_id] %>
+            <%= f.submit "削除", class: "cart-show-left-btn" %>
+          </td>
+        <% end %>
+      </tr>
       <% end %>
-      <% @sum += cart[:sub_total] %>
+    </table>
 
-      <%#商品削除%>
-      <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
-      <td class="border-0 align-middle">
-        <%= hidden_field_tag :product_id, cart[:product_id] %>
-        <%= f.submit "削除", class: "btn btn-danger" %>
-      </td>
-      <% end %>
-    </tr>
-    <% end %>
-
-    <tr class="text-center">
-      <td class="border-bottom-0 align-right">
-        合計
-      </td>
-      <td class="border-bottom-0 align-right">
-        <%= @sum %> 円
-      </td>
-    </tr>
-  </tbody>
+    <div class="total-price-box">
+      合計 <%= @sum %> 円
+    </div>
   <% end %>
 
 
