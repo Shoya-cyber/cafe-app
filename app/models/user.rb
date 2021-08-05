@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_one :card, dependent: :destroy
   has_one :adress, dependent: :destroy
+  has_many :orders, dependent: :nullify
 
   with_options presence: true do
     validates :name
