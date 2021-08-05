@@ -1,0 +1,106 @@
+.customer-confirm-page{
+  padding-top: 150px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.customer-confirm-title{
+  text-align: center;
+  color: gray;
+  margin: 30px 0 60px;
+  font-size: 25px;
+}
+
+.customer-confirm-wrap{
+  display: flex;
+  margin-bottom: 100px;
+}
+.customer-confirm-wrap-half{
+  width: 50%;
+}
+
+.info-title{
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+.credit-card-form{
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+.available-card{
+  display: flex;
+
+}
+.card-logo{
+margin: 2px 5px;
+}
+.input-card-form{
+  width: 80%;
+  margin-top: 5px;
+  height: 40px;
+  padding: 3px 15px ;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.input-expiration-date-wrap{
+  display: flex;
+  text-align: center;
+  line-height: 55px;
+
+}
+.input-expiration-date{
+  width: 80px;
+  margin: 5px 20px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+  line-height: 45px;
+  text-align: center;
+}
+.form-group{
+  
+  margin: 0 auto;
+}
+
+.input-address{
+  width: 100%;
+  margin-top: 5px;
+  height: 40px;
+  padding: 3px 15px ;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.input-postalcode{
+  width: 40%;
+  margin-top: 5px;
+  height: 40px;
+  padding: 3px 15px ;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.customer-info-btn-box{
+  text-align: center;
+  margin-bottom: 100px;
+}
+.customer-info-btn{
+  height: 50px;
+  width: 100px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  font-size: 12px;
+  padding: 9px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
