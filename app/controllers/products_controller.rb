@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.order('created_at DESC')
     
+    return if session[:cart].blank?
     @cart = []
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])

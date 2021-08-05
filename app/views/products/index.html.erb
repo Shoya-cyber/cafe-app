@@ -15,7 +15,7 @@
     <%= render partial:"product", collection: @products %>
   </div>
 
-  <% if user_signed_in? %>
+  <% if user_signed_in? && !(@cart.blank?) %>
     <% @sub_total = 0 %>
     <% @cart.each do |cart| %>
       <% @sub_total += cart[:quantity].to_i %>
