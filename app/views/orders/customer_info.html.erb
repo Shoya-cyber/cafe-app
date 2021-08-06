@@ -45,12 +45,12 @@
       <h3 class="info-title">お届け先</h3>
       <div class="address-wrap">
         <div class="form-group">
-          <%= f.label :postal_codo, "郵便番号" %><br>
+          <%= f.label :postal_codo, "郵便番号(ハイフンなし)" %><br>
           <%= f.text_field :postal_codo, class: "input-postalcode", id: "postal-code", placeholder: "例）1234567", maxlength: "7" %>
         </div>
         <div class="form-group">
           <%= f.label :prefecture_id, "都道府県" %><br>
-          <%# <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "prefecture-select", id: "prefecture" }) %> %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "prefecture-select", id: "prefecture" }) %>
         </div>
         <div class="form-group">
           <%= f.label :city, "市区町村" %><br>

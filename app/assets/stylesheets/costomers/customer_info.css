@@ -39,7 +39,7 @@
 margin: 2px 5px;
 }
 .input-card-form{
-  width: 80%;
+  width: 87%;
   margin-top: 5px;
   height: 40px;
   padding: 3px 15px ;
@@ -103,4 +103,12 @@ margin: 2px 5px;
   padding: 9px 15px;
   border-radius: 3px;
   cursor: pointer;
+}
+.prefecture-select{
+  margin-top: 5px;
+  height: 40px;
+  padding: 3px 15px ;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
