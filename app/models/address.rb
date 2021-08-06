@@ -1,5 +1,7 @@
 class Address < ApplicationRecord
   belongs_to :user
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A\d{7}\z/, message: "is invalid. Not include hyphen(-)." }
