@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
-
-  def customer_info
+  def new
     @order = Order.new
   end
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "homes#index"
   resources :posts
   resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :orders, only: [:new, :create]
 
   get 'carts/show', to: 'carts#show', as: 'carts/show'
   post 'carts/add_cart', to: 'carts#add_cart'
