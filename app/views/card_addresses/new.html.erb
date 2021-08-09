@@ -5,7 +5,7 @@
     お客様情報入力
   </h2>
 
-  <%= form_with model: @order, url: "#", id: "charge-form", class: 'transaction-form-wrap', local: true do |f| %>
+  <%= form_with model: @card_address, url: "#", id: "charge-form", class: 'transaction-form-wrap', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="customer-confirm-wrap">
     <%# クレジットカード %>
