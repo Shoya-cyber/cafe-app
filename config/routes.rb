@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete 'carts/destroy_carts_item', to: 'carts#destroy_carts_item', as: 'destroy_carts_item'
 
   get 'card_address/new', to: 'card_addresses#new', as: 'new_card_address'
+  post 'card_address/new', to: 'card_addresses#create'
 end
