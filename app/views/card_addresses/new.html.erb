@@ -5,7 +5,7 @@
     お客様情報入力
   </h2>
 
-  <%= form_with model: @card_address, url: "#", id: "charge-form", class: 'transaction-form-wrap', local: true do |f| %>
+  <%= form_with model: @card_address, url: card_address_new_path, id: "charge-form", class: 'transaction-form-wrap', local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="customer-confirm-wrap">
     <%# クレジットカード %>
@@ -45,8 +45,8 @@
       <h3 class="info-title">お届け先</h3>
       <div class="address-wrap">
         <div class="form-group">
-          <%= f.label :postal_codo, "郵便番号(ハイフンなし)" %><br>
-          <%= f.text_field :postal_codo, class: "input-postalcode", id: "postal-code", placeholder: "例）1234567", maxlength: "7" %>
+          <%= f.label :postal_code, "郵便番号(ハイフンなし)" %><br>
+          <%= f.text_field :postal_code, class: "input-postalcode", id: "postal-code", placeholder: "例）1234567", maxlength: "7" %>
         </div>
         <div class="form-group">
           <%= f.label :prefecture_id, "都道府県" %><br>
