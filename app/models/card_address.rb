@@ -1,6 +1,6 @@
 class CardAddress
   include ActiveModel::Model
-  attr_accessor :token, :postal_code, :prefecture_id, :city, :house_number, :building_name, :user_id, :coutomer_id
+  attr_accessor :card_id, :postal_code, :prefecture_id, :city, :house_number, :building_name, :user_id, :customer_id
 
   with_options presence: true do
     validates :card_id
@@ -12,7 +12,7 @@ class CardAddress
   end
 
   def save
-    card = Card.create(token: token, user_id: user_id, customer_id: customer_id)
+    Card.create(card_id: card_id, user_id: user_id, customer_id: customer_id)
     Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, user_id: user_id)
   end
 
