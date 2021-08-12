@@ -80,12 +80,11 @@
         <%= @sum_quantity %> 点 / 
         合計 <b><%= @sum %></b> 円(税込)
       </div>
-      <%= form_with model: @order, url:"#", local: true do |f| %>
+      
       <div class="buy-btm-box">
-        <%= f.submit "購入する", class: "buy-btm" %><br>
+        <%= link_to "購入する", orders_path, method: :post, class: "buy-btm" %><br>
         <%= link_to "<<カートへ戻る", carts_show_path, class: "back-link" %>
       </div>
-      <% end %>
     </div>
   </div>
   
