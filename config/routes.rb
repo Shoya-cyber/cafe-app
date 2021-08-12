@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   get 'card_address/new', to: 'card_addresses#new', as: 'new_card_address'
   post 'card_address/new', to: 'card_addresses#create'
+
+  get 'orders/complete', to: 'orders#complete'
 end
