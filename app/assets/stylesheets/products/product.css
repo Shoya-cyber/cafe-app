@@ -14,7 +14,12 @@
 }
 
 .product-buy-btn{
-  margin: 20px 0;
+  margin: 20px ;
+  display: flex;
+  align-items: center;
+}
+.pruduct-buy-btn-box{
+  margin-left: 40px;
 }
 
 .product-admin-btn-wrap{
@@ -27,4 +32,17 @@
   background-color:silver;
   padding: 10px 20px;
   border-radius: 100%;
+}
+.pur-number{
+  width: 50px;
+  text-align: center;
+}
+.in-cart-btn{
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  font-size: 10px;
+  padding: 9px 15px;
+  border-radius: 3px;
+  cursor: pointer;
 }

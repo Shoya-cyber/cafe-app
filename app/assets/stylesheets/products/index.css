@@ -18,3 +18,32 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.cart-icon-btn-box{
+  width: 120px;
+  height: 100px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 7px;
+}
+.cart-icon-text{
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.cart-icon-image{
+  width: 60%;
+  border-radius: 8%;
+}
+.cart-quantity{
+  width: 25px;
+  background-color: red;
+  color: white;
+  border-radius: 100%;
+  margin: -20px 0 0 110px;
+}

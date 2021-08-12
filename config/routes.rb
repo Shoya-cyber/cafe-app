@@ -4,5 +4,15 @@ Rails.application.routes.draw do
   root to: "homes#index"
   resources :posts
   resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :orders, only: [:new, :create]
 
+  get 'carts/show', to: 'carts#show', as: 'carts/show'
+  post 'carts/add_cart', to: 'carts#add_cart'
+  patch 'carts/change_quantity', to: 'carts#change_quantity', as: 'change_item_quantity'
+  delete 'carts/destroy_carts_item', to: 'carts#destroy_carts_item', as: 'destroy_carts_item'
+
+  get 'card_address/new', to: 'card_addresses#new', as: 'new_card_address'
+  post 'card_address/new', to: 'card_addresses#create'
+
+  get 'orders/complete', to: 'orders#complete'
 end

@@ -11,7 +11,13 @@
   </div>
   <% if user_signed_in? %>
     <div class="product-buy-btn">
-      <p>カートへ入れる    １</p>
+      <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
+      <div class="pruduct-buy-btn-box">
+        <%= f.number_field :quantity, min: 1, class: "pur-number", :value => 1 %>
+        <%= hidden_field_tag :product_id, product.id %>
+        <%= f.submit "カートへ", class: "in-cart-btn" %>
+      </div>
+      <% end %>
     </div>
   <% end %>
   <% if current_user.try(:admin?) %>
@@ -20,4 +26,6 @@
       <%= link_to "削除",product_path(product.id), method: :delete, class: "product-admin-btn" , data: {confirm: "削除しますか？"} %>
     </div>
   <%end%>
+
+  
 </div>
