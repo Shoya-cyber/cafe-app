@@ -1,3 +1,45 @@
 .order-new-page{
   padding-top: 150px;
 }
+
+.order-new-content{
+  width: 70%;
+  margin: 0 auto;
+}
+.order-new-content-top{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 80px;
+}
+.order-content-top-left, .order-content-top-right{
+  width: 45%;
+  padding: 20px;
+  line-height: 30px;
+  border: 1px solid black;
+}
+.total-box{
+  font-size: 19px;
+}
+.order-new-content-footer{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+.buy-btm{
+  height: 60px;
+  width: 150px;
+  background-color: #3ccace;
+  color: white;
+  border: none;
+  font-size: 17px;
+  padding: 9px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.back-link{
+  text-decoration: none;
+  color: #3ccace;
+  line-height: 100px;
+  margin-left: 20px;
+}
