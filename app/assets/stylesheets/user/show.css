@@ -59,3 +59,23 @@
   color: #3ccace;
   font-weight: 900;
 }
+
+.user-edit-link-box{
+  width: 100%;
+  text-align: right;
+}
+
+.user-edit-link{
+  text-decoration: none;
+  color: cornflowerblue;
+  font-size: 20px;
+}
+
+.card-address-link-wrap{
+  text-align: center;
+  line-height: 40px;
+}
+.card-address-link{
+  text-decoration: none;
+  color: cornflowerblue;
+}

@@ -6,7 +6,9 @@
   <div class="user-show-contents">
     <div class="user-acount-wrap">
       <h3 class="user-info-title">お客様情報</h3>
-
+      <div class="user-edit-link-box">
+        <%= link_to "編集", edit_user_registration_path, class: "user-edit-link" %>
+      </div>
       <ul class="user-info-list">
         <li><%= @user.name %></li>
         <li><%= @user.name_reading %></li>
@@ -17,6 +19,10 @@
 
     <div class="user-card-address-wrap">
       <h3 class="user-info-title">カード・商品お届け先情報</h3>
+      <% if @user.address.present? %>
+      <div class="user-edit-link-box">
+        <%= link_to "編集", "#", class: "user-edit-link" %>
+      </div>
       <div class="user-card-address-list">
         <div class="user-card-address-list-left">
           <ul>
@@ -55,6 +61,12 @@
           
         <% end %>
       </div>
+      <% else %>
+      <div class="card-address-link-wrap">
+        <p>登録していただくとオンラインストアをご利用いただけます。</p>
+        <%= link_to "登録する", new_card_address_path, class: "card-address-link" %>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
