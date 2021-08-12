@@ -1,3 +1,60 @@
 <div class="user-show-page">
-  show
+  <h2 class="user-show-title">
+    マイページ
+  </h2>
+
+  <div class="user-show-contents">
+    <div class="user-acount-wrap">
+      <h3 class="user-info-title">お客様情報</h3>
+
+      <ul class="user-info-list">
+        <li><%= @user.name %></li>
+        <li><%= @user.name_reading %></li>
+        <li><%= @user.email %></li>
+        <li><%= @user.phone_number %></li>
+      </ul>
+    </div>
+
+    <div class="user-card-address-wrap">
+      <h3 class="user-info-title">カード・商品お届け先情報</h3>
+      <div class="user-card-address-list">
+        <div class="user-card-address-list-left">
+          <ul>
+            <% if @card.brand = "visa" %>
+              <li><%= image_tag 'card-visa.gif', class: "card-logo", size: '35x25' %>
+            <% elsif @card.brand = "MasterCard" %>
+              <li><%= image_tag 'card-mastercard.gif', class: "card-logo", size: '35x25' %>
+            <% elsif @card.brand = "American Express" %>
+              <li><%= image_tag 'card-amex.gif', class: "card-logo", size: '35x25' %>
+            <% elsif @card.brand = "JCB" %>
+              <li><%= image_tag 'card-jcb.gif', class: "card-logo", size: '35x25' %>
+            <% end %>
+            <%= @card.brand %></li>
+            <li>有効期限　<%= @card.exp_month %> / 
+            <%= @card.exp_year %> 年</li>
+            <li><p>カード番号　････ ････ ････ <%= @card.last4 %></p></li>
+          </ul>
+        </div>
+        <div class="user-card-address-list-right">
+          <ul>
+            <li><%= @user.address.postal_code %></li>
+            <li><%= @user.address.prefecture.name %><%= @user.address.city %></li>
+            <li><%= @user.address.house_number %></li>
+            <li><%= @user.address.building_name %></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="purchase-history-content">
+      <h3 class="user-info-title">購入履歴</h3>
+      <div class="purchase-history-list">
+        <% @user.orders.each do |order| %>
+          <div class="purchase-history-link-box">
+            <%=link_to order.created_at.strftime('%Y/%m/%d'), "#", class:"purchase-history-link"  %>
+          </div>
+          
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
