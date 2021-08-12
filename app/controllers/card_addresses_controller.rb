@@ -1,4 +1,8 @@
 class CardAddressesController < ApplicationController
+
+  before_action :authenticate_user!, only:[:new, :create]
+  before_action :move_to_root, only:[:new, :create]
+
   def new
     @card_address = CardAddress.new
   end
@@ -29,4 +33,9 @@ class CardAddressesController < ApplicationController
       customer_id: customer.id)
   end
 
+  def move_to_root
+    if current_user.address.present? || current_user.card.present?
+      redirect_to root_path
+    end
+  end
 end
