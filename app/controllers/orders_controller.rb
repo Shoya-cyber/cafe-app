@@ -1,4 +1,9 @@
 class OrdersController < ApplicationController
+
+  before_action :authenticate_user!, only:[:new, :create]
+  before_action :move_to_root_path, only: [:new, :create]
+  before_action :cart_session, only:[:new, :create]
+
   def new
     @order = Order.new
     @address = Address.find_by(user_id: current_user.id)
@@ -8,23 +13,9 @@ class OrdersController < ApplicationController
     customer= Payjp::Customer.retrieve(card.customer_id)
     @card = customer.cards.first
 
-    @cart = []
-    session[:cart].each do |cart|
-      product = Product.find_by(id: cart["product_id"])
-      sub_total = product.price * cart["quantity"].to_i
-      next unless product
-
-      @cart.push({ product_id: product.id,
-                   image: product.image,
-                   name: product.product_name,
-                   price: product.price,
-                   quantity: cart["quantity"].to_i,
-                   sub_total: sub_total })
-    end
   end
     
   def create
-    cart_session
     total_price = 0
     total_quantity = 0
     @cart.each do |cart|
@@ -87,6 +78,10 @@ class OrdersController < ApplicationController
     )
   end
 
-
+  def move_to_root_path
+    if !(user_signed_in?) || session[:cart].blank?
+      redirect_to root_path
+    end
+  end
 
 end
