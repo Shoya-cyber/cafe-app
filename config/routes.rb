@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root to: "homes#index"
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :orders, only: [:new, :create]
   resources :users, only: [:show]
+  resources :addresses, only: [:edit, :update]
 
   get 'carts/show', to: 'carts#show', as: 'carts/show'
   post 'carts/add_cart', to: 'carts#add_cart'
