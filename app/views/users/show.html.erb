@@ -21,7 +21,7 @@
       <h3 class="user-info-title">カード・商品お届け先情報</h3>
       <% if @user.address.present? %>
       <div class="user-edit-link-box">
-        <%= link_to "編集", "#", class: "user-edit-link" %>
+        <%= link_to "編集", edit_address_path, class: "user-edit-link" %>
       </div>
       <div class="user-card-address-list">
         <div class="user-card-address-list-left">
