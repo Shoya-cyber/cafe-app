@@ -1,0 +1,32 @@
+<%= form_with model: @address, url: address_path, method: :patch, local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
+<div class="address-edit-page">
+
+  <h3 class="info-title">お届け先</h3>
+  <div class="address-wrap">
+    <div class="address-edit-form-group">
+      <%= f.label :postal_code, "郵便番号(ハイフンなし)" %><br>
+      <%= f.text_field :postal_code, class: "input-postalcode", id: "postal-code", placeholder: "例）1234567", maxlength: "7" %>
+    </div>
+    <div class="address-edit-form-group">
+      <%= f.label :prefecture_id, "都道府県" %><br>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "prefecture-select", id: "prefecture" }) %>
+    </div>
+    <div class="address-edit-form-group">
+      <%= f.label :city, "市区町村" %><br>
+      <%= f.text_field :city, class: "input-address", id: "city", placeholder: "例）〇〇市〇〇区" %>
+    </div>
+    <div class="address-edit-form-group">
+      <%= f.label :house_number, "番地" %><br>
+      <%= f.text_field :house_number, class: "input-address", id: "house-number", placeholder: "例）〇〇1-2-3" %>
+    </div>
+    <div class="address-edit-form-group">
+      <%= f.label :building_name, "建物名" %><br>
+      <%= f.text_field :building_name, class: "input-address", id: "building", placeholder: "任意" %>
+    </div>
+  </div>
+  <div class="customer-info-btn-box">
+    <%= f.submit "更新", class: "customer-info-btn" %>
+  </div>
+</div>
+<% end %>
