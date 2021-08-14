@@ -13,7 +13,7 @@ class User < ApplicationRecord
     validates :name
     validates :name_reading, format: { with: /\A[ァ-ヶー－　]+\z/, message: 'is invalid. Input full-width characters.' }
     validates :email, uniqueness: true
-    validates :password
+    validates :password, on: :create
     validates :phone_number, length: { maximum: 11 }
     validates :birth_date
   end
@@ -21,5 +21,5 @@ class User < ApplicationRecord
   validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid. Not include hyphen(-).' }
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Password Include both letters and numbers.'
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Password Include both letters and numbers.', on: :create
 end
