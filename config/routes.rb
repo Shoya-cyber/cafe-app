@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "homes#index"
   resources :posts
   resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :orders, only: [:new, :create]
+  resources :orders, only: [:new, :create, :show]
   resources :users, only: [:show]
   resources :addresses, only: [:edit, :update]
 
@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get 'card_address/new', to: 'card_addresses#new', as: 'new_card_address'
   post 'card_address/new', to: 'card_addresses#create'
 
-  get 'orders/complete', to: 'orders#complete'
+  get 'orders/complete/:id', to: 'orders#complete', as:'orders_complete'
 end

@@ -42,13 +42,17 @@ class OrdersController < ApplicationController
     if @order.save && @order_detail.save
       charge
       session[:cart].clear
-      redirect_to orders_complete_path
+      redirect_to orders_complete_path(@order.id)
     else
       render :new
     end
-
-
   end
+
+
+  def show
+    @order = Order.find(params[:id])
+  end
+
 
   private
 
