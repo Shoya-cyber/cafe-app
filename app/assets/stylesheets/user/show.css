@@ -1,0 +1,81 @@
+.user-show-page{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.user-show-title{
+  text-align: center;
+  color: gray;
+  margin: 30px 0 60px;
+  font-size: 25px;
+}
+
+
+.user-acount-wrap{
+  margin-bottom: 50px;
+}
+
+.user-info-title{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.user-info-list{
+  width: 50%;
+  margin: 0 auto;
+  line-height: 40px;
+}
+
+.user-card-address-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-card-address-list-left, .user-card-address-list-right{
+  width: 44%;
+  padding: 20px;
+  line-height: 30px;
+  border: 1px solid black;
+}
+.purchase-history-content{
+  margin: 50px 0;
+}
+
+.purchase-history-list{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.purchase-history-link-box{
+  width: 20%;
+  margin: 5px 10px;
+}
+
+.purchase-history-link{
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: 900;
+}
+
+.user-edit-link-box{
+  width: 100%;
+  text-align: right;
+}
+
+.user-edit-link{
+  text-decoration: none;
+  color: cornflowerblue;
+  font-size: 16px;
+}
+
+.card-address-link-wrap{
+  text-align: center;
+  line-height: 40px;
+}
+.card-address-link{
+  text-decoration: none;
+  color: cornflowerblue;
+}

@@ -42,13 +42,23 @@ class OrdersController < ApplicationController
     if @order.save && @order_detail.save
       charge
       session[:cart].clear
-      redirect_to orders_complete_path
+      redirect_to orders_complete_path(@order.id)
     else
       render :new
     end
-
-
   end
+
+
+  def show
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details.includes(:order)
+
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      card = Card.find_by(user_id: @order.user.id)
+      customer= Payjp::Customer.retrieve(card.customer_id)
+      @card = customer.cards.first
+  end
+
 
   private
 
