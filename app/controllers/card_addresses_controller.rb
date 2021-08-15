@@ -12,7 +12,11 @@ class CardAddressesController < ApplicationController
 
     if @card_address.valid?
       @card_address.save
-      redirect_to new_order_path
+      if session[:cart].blank?
+        redirect_to user_path(current_user.id)
+      else
+        redirect_to new_order_path
+      end
     else
       render :new
     end
