@@ -1,6 +1,5 @@
 .registration{
   width: 50%;
-  padding-top: 150px ;
   margin: 0 auto;
 }
 
@@ -9,11 +8,12 @@
   height: 100px;
   text-align: center;
   font-size: 27px;
+  margin-top: 50px;
 }
 
 .registration-title-text{
   line-height: 100px;
-  font-weight: bold;
+  color: gray;
 }
 
 .field{

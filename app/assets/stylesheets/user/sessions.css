@@ -1,5 +1,4 @@
 .sessions-wrap{
-  padding-top: 150px;
   width: 50%;
   margin: 0 auto;
 }
@@ -9,11 +8,12 @@
   height: 100px;
   text-align: center;
   font-size: 27px;
+  margin-top: 50px;
 }
 
 .sessions-title-text{
   line-height: 100px;
-  font-weight: bold;
+  color: gray;
 }
 
 .sessions-btn{
