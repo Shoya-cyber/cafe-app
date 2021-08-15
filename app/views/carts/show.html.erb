@@ -23,6 +23,7 @@
       </tr>
 
       <% @sum = 0 %>
+      <% @sum_quantity = 0 %>
       <% @cart.each.with_index(1) do |cart, i| %>
       <tr class="cart-product-info">
         <td class="align-middle">
@@ -50,6 +51,7 @@
           </td>
         <% end %>
         <% @sum += cart[:sub_total] %>
+        <% @sum_quantity += cart[:quantity] %>
 
         <%#商品削除%>
         <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
@@ -63,9 +65,21 @@
     </table>
 
     <div class="total-price-box">
-      合計 <%= @sum %> 円
+      <%= @sum_quantity %> 点 / 
+        合計 <b><%= @sum %></b> 円(税込)
     </div>
   <% end %>
+
+  <div class="cart-link-wrap">
+    <% if current_user.address.present? %>
+      <%= link_to "購入確認へ", new_order_path, class: "cart-link" %>
+    <% else %>
+      <%= link_to "カード・お届け先登録へ", new_card_address_path, class: "cart-link" %>
+    <% end %>
+  </div>
+  <div class="cart-back-link-wrap">
+    <%= link_to "商品一覧へ戻る", products_path, class: "cart-back-link" %>
+  </div>
 
 
 </div>
