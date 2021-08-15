@@ -1,12 +1,23 @@
+.home-page{
+  margin-bottom: 200px;
+}
+
+.home-pic-space{
+  text-align: center;
+  margin-bottom: 150px;
+}
 .home-pic {
   width: 100%;
-  height: 600px;
-  margin-bottom: 100px;
+  height: 630px;
+}
+
+.home-contents{
+  width: 70%;
+  margin: 0 auto;
 }
 
 .news-contents{
-  width: 70%;
-  margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 .news-title{
@@ -23,4 +34,32 @@
 .news-lists{
   display: flex;
   justify-content: space-around;
+}
+
+.home-link-title{
+  font-size: 25px;
+  color: gray;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home-link-ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-pic-box{
+  position: relative;
+}
+.link-pic-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  font-family :Quicksand, sans-serif;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
 }

@@ -1,25 +1,41 @@
-<main>
+<div class="home-page">
   <div class="home-pic-space">
-    <%= image_tag "home-pic.png", class:"home-pic" %>
+    <%= image_tag "home-picture.png", class:"home-pic" %>
   </div>
   
-  <div class="news-contents">
-    <div class="news-title">
-      <%= link_to "NEWS", posts_path, class: "news-title-link" %>
+  <div class="home-contents">
+    <div class="news-contents">
+      <div class="news-title">
+        <%= link_to "NEWS", posts_path, class: "news-title-link" %>
+      </div>
+      <div class="news-lists">
+        <%= render partial: 'posts/post', collection:@posts %>
+      </div>
+      
     </div>
-    <div class="news-lists">
-      <%= render partial: 'posts/post', collection:@posts %>
+
+    <div class="home-link-wrap">
+      <h2 class="home-link-title">Contents</h2>
+      <ul class="home-link-ul">
+        <li>
+          <div class="link-pic-box">
+            <%= link_to image_tag("online-pic.png", size: "300x180"), products_path  %>
+            <p class="link-pic-text">OnlineStore</p>
+          </div>
+        </li>
+        <li>
+          <div class="link-pic-box">
+            <%= link_to image_tag("menu-pic.png", size: "300x180") %>
+            <p class="link-pic-text">MENU</p>
+          </div>
+        </li>
+        <li>
+          <div class="link-pic-box">
+            <%= link_to image_tag("shop-pic.png", size: "300x180") %>
+            <p class="link-pic-text">STORE</p>
+          </div>
+        </li>
+      </ul>
     </div>
-    
   </div>
-
-  <div>link
-    <ul>
-      <li>a</li>
-      <li>b</li>
-      <li>c</li>
-    </ul>
-
-  </div>
-  
-</main>
+</div>
