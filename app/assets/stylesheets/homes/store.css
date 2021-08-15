@@ -1,0 +1,25 @@
+.store-page{
+  width: 50%;
+  margin: 100px auto;
+}
+
+.store-title{
+  text-align: center;
+  color: gray;
+  font-size: 27px;
+  margin: 100px 0;
+}
+
+.store-pic-wrap{
+  margin-bottom: 50px;
+}
+
+.store-place-wrap{
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+
+.store-map-wrap{
+  text-align: center;
+}

@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   post 'card_address/new', to: 'card_addresses#create'
 
   get 'orders/complete/:id', to: 'orders#complete', as:'orders_complete'
+
+  get 'homes/store'
 end
