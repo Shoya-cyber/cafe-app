@@ -1,7 +1,6 @@
 .products-new-page{
-  padding-top: 150px;
   width: 50%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 .products-new-title-wrap{
   text-align: center;
@@ -57,5 +56,5 @@
 
 .products-back-btn{
   text-decoration: none;
-  color: black;
+  color: gray;
 }
