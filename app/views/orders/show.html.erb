@@ -1,4 +1,71 @@
 <div class="order-show-page">
-  <%= @order.total_quantity %>
-  <%= @order.total_price %>
+  <h2 class="customer-confirm-title">
+    購入履歴
+  </h2>
+
+  注文日時：<%= @order.created_at.strftime('%Y/%m/%d %H時 %M分') %>
+
+  <div class="perchase-history-content-top">
+      <div class="perchase-history-top-left">
+        <h3 class="info-title">クレジットカード</h3>
+        <ul>
+        <% if @card.brand = "visa" %>
+          <li><%= image_tag 'card-visa.gif', class: "card-logo", size: '35x25' %>
+        <% elsif @card.brand = "MasterCard" %>
+          <li><%= image_tag 'card-mastercard.gif', class: "card-logo", size: '35x25' %>
+        <% elsif @card.brand = "American Express" %>
+          <li><%= image_tag 'card-amex.gif', class: "card-logo", size: '35x25' %>
+        <% elsif @card.brand = "JCB" %>
+          <li><%= image_tag 'card-jcb.gif', class: "card-logo", size: '35x25' %>
+        <% end %>
+        <%= @card.brand %></li>
+        <li>有効期限　<%= @card.exp_month %> / 
+        <%= @card.exp_year %> 年</li>
+        <li><p>カード番号　････ ････ ････ <%= @card.last4 %></p></li>
+        </ul>
+      </div>
+      <div class="perchase-history-top-right">
+        <h3 class="info-title">お届け先</h3>
+        <ul>
+          <li><%= @order.address.postal_code %></li>
+          <li><%= @order.address.prefecture.name %><%= @order.address.city %></li>
+          <li><%= @order.address.house_number %></li>
+          <li><%= @order.address.building_name %></li>
+        </ul>
+      </div>
+    
+    </div>
+
+  <table class="table01">
+    <tr>
+      <th colspan="2">商品</th>
+      <th>数量</th>
+      <th>小計</th>
+    </tr>
+
+    <% @order_details.each do |order_detail| %>
+    <tr class="cart-product-info">
+      <td class="cart-show-image">
+        <%= image_tag order_detail.product.image, size: '170x120' %>
+      </td>
+      <td class="cart-show-name">
+        <%= order_detail.product.product_name %><br>
+        <%= order_detail.product.price %> 円
+      </td>
+      <td>
+        <%= order_detail.quantity %>
+      </td>
+      <td>
+        <%= order_detail.product.price * order_detail.quantity %> 円
+      </td>
+    </tr>  
+    <% end %>
+  </table>
+
+  <div class="perchase-history-total">
+    <%= @order.total_quantity %> 点 / 
+    合計 <b><%= @order.total_price %></b> 円(税込)
+  </div>
+
+    
 </div>

@@ -51,6 +51,12 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_details = @order.order_details.includes(:order)
+
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      card = Card.find_by(user_id: @order.user.id)
+      customer= Payjp::Customer.retrieve(card.customer_id)
+      @card = customer.cards.first
   end
 
 

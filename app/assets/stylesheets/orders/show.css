@@ -1,0 +1,29 @@
+.order-show-page{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.perchase-history-title{
+  text-align: center;
+  color: gray;
+  margin: 30px 0 60px;
+  font-size: 25px;
+}
+
+.perchase-history-content-top{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px 0;
+}
+.perchase-history-top-left, .perchase-history-top-right{
+  width: 40%;
+  padding: 20px;
+  line-height: 30px;
+  border: 1px solid black;
+}
+
+.perchase-history-total{
+  text-align: right;
+  margin-bottom: 100px;
+}
