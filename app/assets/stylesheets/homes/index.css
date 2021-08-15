@@ -50,6 +50,7 @@
 
 .link-pic-box{
   position: relative;
+  z-index: 4;
 }
 .link-pic-text{
   position: absolute;
