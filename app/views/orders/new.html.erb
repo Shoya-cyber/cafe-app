@@ -80,7 +80,7 @@
       </div>
       
       <div class="buy-btm-box">
-        <%= link_to "購入する", orders_path, method: :post, class: "buy-btm" %><br>
+        <%= link_to "購入する", orders_path, method: :post, class: "buy-btm", data: {confirm: "購入を確定してよろしいですか？"} %><br>
         <%= link_to "<<カートへ戻る", carts_show_path, class: "back-link" %>
       </div>
     </div>
