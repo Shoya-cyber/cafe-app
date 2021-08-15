@@ -36,6 +36,9 @@
 .pur-number{
   width: 50px;
   text-align: center;
+  height: 27px;
+  padding-bottom: 3px;
+  margin-right: 10px;
 }
 .in-cart-btn{
   background-color: cornflowerblue;

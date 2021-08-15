@@ -45,7 +45,11 @@ th{
 
 .cart-show-quantity{
   width: 50px;
+  text-align: center;
+  height: 30px;
+  margin-right: 10px;
 }
+
 .cart-show-left-btn{
   background-color: cornflowerblue;
   color: white;
