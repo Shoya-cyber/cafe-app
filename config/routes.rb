@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get 'orders/complete/:id', to: 'orders#complete', as:'orders_complete'
 
   get 'homes/store'
+  get 'homes/about'
 end

@@ -46,11 +46,13 @@
 .home-link-ul{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .link-pic-box{
   position: relative;
   z-index: 4;
+  margin-bottom: 20px;
 }
 .link-pic-text{
   position: absolute;
