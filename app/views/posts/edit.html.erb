@@ -24,9 +24,11 @@
       <%= f.text_area :text, class:"text-form", placeholder:"記事" %>
     </div>
 
-    <div class="post-submit">
+    <div class="post-submit-btn-box">
       <%= f.submit "投稿する" ,class: "post-submit-btn" %>
-      <%= link_to "トップページへ戻る", root_path, class:"back-btn"%>
+    </div>
+    <div class="post-back-btn-box">
+      <%= link_to "トップに戻る", root_path, class:"post-back-btn"%>
     </div>
   </div>
 

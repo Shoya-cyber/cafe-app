@@ -1,9 +1,6 @@
 .post-form {
-  background-color: blueviolt;
   width: 70%;
-  margin: 150px auto 0;
-  font-weight: 800;
-  ;
+  margin: 50px auto 0;
 }
 
 .post-header{
@@ -11,10 +8,10 @@
 }
 
 .post-title{
-  font-size: 30px;
+  font-size: 27px;
   text-align: center;
   margin-bottom: 40px;
-  border-bottom: 1px solid black;
+  color: gray;
 }
 
 .field{
@@ -27,7 +24,7 @@
   height: 30px;
   padding: 10px 16px 8px;
   border-radius: 4px;
-  border: 5px solid #ccc;
+  border: 2px solid #ccc;
   background: #fff;
   font-size: 16px;
   resize: none;
@@ -39,16 +36,15 @@
   height: 500px;
   padding: 10px 16px 8px;
   border-radius: 4px;
-  border: 5px solid #ccc;
+  border: 2px solid #ccc;
   background: #fff;
   font-size: 15px;
 }
 
-.post-submit{
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+.post-submit-btn-box{
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
 }
 
 .post-submit-btn{
@@ -58,11 +54,18 @@
   height: 70px;
   border-radius: 100%;
   border: none;
-  margin:  50px auto ;
+  cursor: pointer;
 }
 
-.back-btn{
-  margin-left: 40px;
+.post-back-btn-box{
+
+  text-align: center;
+}
+
+.post-back-btn{
+  text-decoration: none;
+  color: gray;
+  line-height: 80px;
 }
 
 .select-box{
@@ -70,6 +73,6 @@
   height: 50px;
   padding: 10px 16px 8px;
   border-radius: 4px;
-  border: 5px solid #ccc;
+  border: 2px solid #ccc;
   background: #fff;
 }

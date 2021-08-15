@@ -3,7 +3,7 @@
     <%= @post.title %>
   </div>
   <div class="show-date">
-   <%= @post.updated_at.to_s(:datetime_jp) %>
+   <%= @post.updated_at.strftime('%Y/%m/%d') %>
   </div>
   <div class="show-image">
     <%= image_tag @post.image, class: "show-post-image" %>

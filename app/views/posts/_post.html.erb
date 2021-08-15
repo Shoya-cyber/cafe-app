@@ -4,7 +4,7 @@
       <ul class="article-body-lists">
         <li class="article-list">#<%= post.post_category.name %></li>
         <li class="article-list"><b><%= link_to post.title, post_path(post.id), class: "post-title-link" %></b></li>
-        <li class="article-list"><%= post.updated_at.to_s(:datetime_jp) %></li>
+        <li class="article-list"><%= post.updated_at.strftime('%Y/%m/%d') %></li>
       </ul>
     </div>
     <% if current_user.try(:admin?) %>

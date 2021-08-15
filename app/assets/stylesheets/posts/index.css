@@ -1,11 +1,12 @@
 .post-top{
-margin: 120px 0 100px;
+margin: 50px 0;
 }
 
 .post-top-title{
   text-align: center;
-  font-size: 30px;
+  font-size: 27px;
   padding: 20px 0;
+  color: gray;
 }
 
 .post-main-contents{

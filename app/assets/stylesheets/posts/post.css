@@ -13,7 +13,9 @@
 }
 
 .article-list{
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 15px;
 }
 .article-admin-btn-wrap{
   text-align: center;

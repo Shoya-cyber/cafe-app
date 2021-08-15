@@ -1,16 +1,15 @@
 .post-show{
-  padding-top: 150px;
   width: 50%;
-  margin: 50px auto;
+  margin: 80px auto;
 }
 .show-title{
-  width: 80%;
+  width: 100%;
   margin: 0 auto 30px;
   font-size: 25px;
 }
 .show-date{
-  width: 30%;
-  margin: 0 0 30px auto;
+  text-align: right;
+  margin-bottom: 30px;
 }
 .show-post-image{
   width: 100%;
@@ -28,7 +27,7 @@
 .show-btn{
   margin: 0 50px 100px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color: white;
   background-color:silver;
   padding: 10px 20px;
