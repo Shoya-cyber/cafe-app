@@ -54,7 +54,7 @@
     <div class="purchase-history-content">
       <h3 class="user-info-title">購入履歴</h3>
       <div class="purchase-history-list">
-        <% @user.orders.each do |order| %>
+        <% @user.orders.reverse_each do |order| %>
           <div class="purchase-history-link-box">
             <%=link_to order.created_at.strftime('%Y/%m/%d'), order_path(order.id), class:"purchase-history-link"  %>
           </div>
