@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   get 'homes/store'
   get 'homes/about'
+  get 'homes/menu'
 end
