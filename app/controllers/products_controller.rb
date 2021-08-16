@@ -4,21 +4,21 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all.order('created_at DESC')
-    
+
     return if session[:cart].blank?
+
     @cart = []
     session[:cart].each do |cart|
-      product = Product.find_by(id: cart["product_id"])
-      sub_total = product.price * cart["quantity"].to_i
+      product = Product.find_by(id: cart['product_id'])
+      sub_total = product.price * cart['quantity'].to_i
       next unless product
 
       @cart.push({ product_id: product.id,
                    name: product.product_name,
                    price: product.price,
-                   quantity: cart["quantity"].to_i,
+                   quantity: cart['quantity'].to_i,
                    sub_total: sub_total })
     end
-    
   end
 
   def new
@@ -63,5 +63,4 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
-
 end

@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-    redirect_to user_path
+      redirect_to user_path
     else
       render :edit
     end
@@ -17,18 +17,15 @@ class AddressesController < ApplicationController
   private
 
   def address_params
-    params.require(:address).permit(:postal_code, :prefecture_id, :city, :house_number, :building_name).merge(user_id: current_user.id)
+    params.require(:address).permit(:postal_code, :prefecture_id, :city, :house_number,
+                                    :building_name).merge(user_id: current_user.id)
   end
 
   def move_to_user_show
-    unless user_signed_in? && current_user.id == @address.user_id
-      redirect_to user_path(current_user.id)
-    end
+    redirect_to user_path(current_user.id) unless user_signed_in? && current_user.id == @address.user_id
   end
 
   def set_address
     @address = Address.find(current_user.address.id)
   end
-
-
 end

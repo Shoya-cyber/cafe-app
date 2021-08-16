@@ -35,7 +35,7 @@ RSpec.describe CardAddress, type: :model do
       it 'postal_codeにハイフンが含まれていると保存できないこと' do
         @card_address.postal_code = '123-4567'
         @card_address.valid?
-        expect(@card_address.errors.full_messages).to include("Postal code is invalid. Not include hyphen(-).")
+        expect(@card_address.errors.full_messages).to include('Postal code is invalid. Not include hyphen(-).')
       end
       it 'prefecture_idが空では保存できないこと' do
         @card_address.prefecture_id = nil
@@ -45,7 +45,7 @@ RSpec.describe CardAddress, type: :model do
       it 'prefecture_idが1では保存できないこと' do
         @card_address.prefecture_id = 1
         @card_address.valid?
-        expect(@card_address.errors.full_messages).to include("Prefecture is not selected.")
+        expect(@card_address.errors.full_messages).to include('Prefecture is not selected.')
       end
       it 'cityが空では保存できないこと' do
         @card_address.city = nil

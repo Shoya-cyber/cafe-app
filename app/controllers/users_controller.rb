@@ -6,19 +6,16 @@ class UsersController < ApplicationController
     move_to_root
 
     if @user.address.present?
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       card = Card.find_by(user_id: @user.id)
-      customer= Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(card.customer_id)
       @card = customer.cards.first
     end
-
   end
 
   private
 
   def move_to_root
-    unless user_signed_in? && @user.id == current_user.id
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && @user.id == current_user.id
   end
 end

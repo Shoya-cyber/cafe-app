@@ -25,19 +25,19 @@ RSpec.describe Product, type: :model do
           expect(@product.errors.full_messages).to include("Info can't be blank")
         end
         it 'infoが51文字以上では保存できないこと' do
-          @product.info = ("a" * 51)
+          @product.info = ('a' * 51)
           @product.valid?
-          expect(@product.errors.full_messages).to include("Info is too long (maximum is 50 characters)")
+          expect(@product.errors.full_messages).to include('Info is too long (maximum is 50 characters)')
         end
         it 'priceが空では保存できないこと' do
           @product.price = nil
           @product.valid?
-          expect(@product.errors.full_messages).to include("Price can't be blank", "Price is invalid")
+          expect(@product.errors.full_messages).to include("Price can't be blank", 'Price is invalid')
         end
         it 'priceが全角数字では保存できないこと' do
-          @product.price = "３００"
+          @product.price = '３００'
           @product.valid?
-          expect(@product.errors.full_messages).to include("Price is not a number")
+          expect(@product.errors.full_messages).to include('Price is not a number')
         end
         it 'imageが空では保存できないこと' do
           @product.image = nil
