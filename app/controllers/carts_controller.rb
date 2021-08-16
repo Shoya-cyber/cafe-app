@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :add_card, :change_quantity, :destroy_carts_item]
+
   def show
     return if session[:cart].blank?
     
@@ -45,5 +47,6 @@ class CartsController < ApplicationController
     session[:cart].delete_at(array_index[0])
     redirect_to carts_show_path
   end
+
 
 end

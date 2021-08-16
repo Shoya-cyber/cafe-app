@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-  before_action :authenticate_user!, only:[:new, :create]
+  before_action :authenticate_user!, only:[:new, :create, :show]
   before_action :move_to_root_path, only: [:new, :create]
   before_action :cart_session, only:[:new, :create]
 
@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     customer= Payjp::Customer.retrieve(card.customer_id)
     @card = customer.cards.first
 
+    move_to_root_2
   end
     
   def create
@@ -57,6 +58,8 @@ class OrdersController < ApplicationController
       card = Card.find_by(user_id: @order.user.id)
       customer= Payjp::Customer.retrieve(card.customer_id)
       @card = customer.cards.first
+
+      move_to_root_3
   end
 
 
@@ -90,6 +93,18 @@ class OrdersController < ApplicationController
 
   def move_to_root_path
     if !(user_signed_in?) || session[:cart].blank?
+      redirect_to root_path
+    end
+  end
+
+  def move_to_root_2
+    unless user_signed_in? && @address.user_id == current_user.id 
+      redirect_to root_path
+    end
+  end
+
+  def move_to_root_3
+    unless user_signed_in? && @order.user_id == current_user.id 
       redirect_to root_path
     end
   end
