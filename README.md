@@ -2,7 +2,7 @@
 
 # 架空のカフェのホームページ
 
-# URL 
+# URL https://cafe-app-30527.herokuapp.com/
 
 # テストアカウント
   * 管理者
@@ -22,16 +22,23 @@
     管理者だけが記事の投稿、編集、削除ができる。
 
   * ユーザー登録
-    商品購入をしたいユーザーはユーザー登録をする。
-
-  * 商品一覧
-    オンラインでショップの商品を購入することができる。
+    商品購入をしたいユーザーはユーザー登録をする。。
 
   * カート機能
     セッションを利用して複数の商品を同時に購入できる。
 
+  * 商品購入機能
+    登録した住所とクレジットカードの情報で商品を購入できる。
+
   * ユーザー詳細ページ
     登録情報、購入履歴を確認できる。
+
+  * 記事投稿機能
+    管理者はお知らせやブログの記事を投稿できる。
+
+  * 商品投稿機能
+    管理者はオンラインストア商品を投稿できる。
+
 
 
 
@@ -85,6 +92,7 @@
 ### Association
 
 - belongs_to :user
+- has_one :order, dependent: :nullify
 
 
 ## cards テーブル
@@ -98,6 +106,7 @@
 ### Association
 
 - belongs_to :user
+- has_one :order, dependent: :nullify
 
 
 ## products テーブル
@@ -112,19 +121,17 @@
 
 - has_many :order_details
 - has_many :orders, through::order_details
-- has_many :line_items, depenent::destroy
 
 
 ## orders テーブル
 
-|  Column        |  Type     |  Option                         |
-|  ------------  |  -------  |  -----------------------------  |  
-|  user      |  references  |  null: false, foreign_key: ture  |  
-|  address   |  references  |  null: false, foreign_key: ture  |
-|  card      |  references  |  null: false, foreign_key: ture  |
-|  product   |  references  |  null: false, foreign_key: ture  |
-|  quantity  |  integer     |  null: false                     |
-|  price     |  integer     |  null: false                     |
+|  Column          |  Type        |  Option                          |
+|  --------------  |  ----------  |  ------------------------------  |  
+|  user            |  references  |  null: false, foreign_key: ture  |
+|  address         |  references  |  null: false, foreign_key: ture  |
+|  card            |  references  |  null: false, foreign_key: ture  |
+|  total_quantity  |  integer     |  null: false                     |
+|  total_price     |  integer     |  null: false                     |
 
 ### Association
 
@@ -149,32 +156,9 @@
 - belongs_to :order
 
 
-## carts テーブル
-
-|  Column        |  Type     |  Option       |
-|  ------------  |  -------  |  -----------  |
-|                |           |               |
-
-### Association
-
-- has_many :line_items, dependent::destroy
-
-
-## line_items テーブル
-
-|  Column    |  Type        |  Option                          |
-|  --------  |  ----------  |  ------------------------------  |
-|  product   |  references  |  null: false, foreign_key: ture  |
-|  cart      |  references  |  null: false, foreign_key: ture  |
-|  quantity  |  integer     |  default: 0, null: false         |
-
-### Association
-
-- belongs_to :product
-- belongs_to :cart
 
 # ローカルでの動作方法
- git clone https://github.com/Shoya-cyber/cafe-app
+ git clone https://git.heroku.com/cafe-app-30527.git
 
   rails 6.0.0
   Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
