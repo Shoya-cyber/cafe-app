@@ -51,7 +51,7 @@
   height: 70px;
   border-radius: 100%;
   border: none;
-  
+  cursor: pointer;
 }
 
 .products-back-btn{
