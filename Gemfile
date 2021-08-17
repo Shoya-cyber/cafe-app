@@ -71,3 +71,4 @@ gem 'rails_admin', '~>2.0.0.beta'
 gem 'cancancan'
 gem 'rails-i18n'
 gem 'payjp'
+gem "aws-sdk-s3", require: false
