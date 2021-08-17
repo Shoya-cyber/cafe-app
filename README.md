@@ -5,8 +5,8 @@
 # URL https://cafe-app-30527.herokuapp.com/
 
 # テストアカウント
-  * 管理者 name:テスト1, name_reading:テストイチ, email:test1@com, phone_number:09012345678, birth_date:1930-01-01
-  * 購入者 name:テスト2, name_reading:テストニ, email:test2@com, phone_number:09023456789, birth_date:1930-02-01
+  * 管理者 name:テスト1, name_reading:テストイチ, email:test1@com, phone_number:09012345678, birth_date:1930-01-01, password:test1111
+  * 購入者 name:テスト2, name_reading:テストニ, email:test2@com, phone_number:09023456789, birth_date:1930-02-01, password:test2222
           お届け先 郵便番号:1234567,　都道府県:北海道,　市区町村:test,　町名番地:test, 建物名:test
           テストカード 4242424242424242, 1/25, 123 
   * Basic認証 ID: admin password: 2222
